@@ -1,5 +1,5 @@
-// Cache hors-ligne (réseau d'abord, cache si pas de réseau) — version mwlam0wh
-const C = 'jv-mwlam0wh', FILES = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-512.png'];
+// Cache hors-ligne (réseau d'abord, cache si pas de réseau) — version mwlan7dj
+const C = 'jv-mwlan7dj', FILES = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== C).map(k => caches.delete(k))))); self.clients.claim(); });
 self.addEventListener('fetch', e => {
